@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 1 e Ex 2</title>
+    <link rel="stylesheet" href="./css/ex1_ex2.css">
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./js/ex1Calc.js"></script>
+    <script src="./js/ex2.js"></script>
+</head>
+<body>
+    <main>
+        <div class="ex1">
+            <h2>Sistema de Notas</h2>
+            <form class="ex1Form">
+                <div class="mb-3">
+                  <label class="form-label">Nota 1</label>
+                  <input type="text" class="form-control" id="n1">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Nota 2</label>
+                  <input type="text" class="form-control" id="n2">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="soma()">Submit</button>
+              </form>
+              <h3>Resultado</h3>
+              <p id="resultado"></p>
+        </div>
+        <div class="ex2">
+            <form class="ex2Form">
+                <div class="mb-3">
+                    <label class="form-label">Valor</label>
+                    <input type="value" class="form-control" aria-describedby="emailHelp" id="valor">
+                  </div>
+                <fieldset class="row mb-3 ex2Fieldet">
+                  <legend class="col-form-label col-sm-2 pt-0">Forma de pagamento</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="radio1" value="option1">
+                      <label class="form-check-label" for="gridRadios1">
+                        À vista
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="radio2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        À perder de vista
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+              <button type="submit" class="btn btn-primary" onclick="geraDesconto()">Submit</button>
+              <h3>Valor a pagar</h3>
+              <p id="resultadoDesconto"></p>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 9</title>
+    <link rel="stylesheet" href="./css/ex6.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./js/ex9.js" defer></script>
+</head>
+<body>
+    <main class="ex6 container d-grid gap-3">
+        <h1>Tabuada</h1>
+        <form>
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Informe o número</label>
+              <div class="col-sm-10">
+                <input type="value" class="form-control w-25 p-3 h-25 d-inline-block" id="numero" placeholder="Número" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+              </div>
+            </div>
+          </form>
+          <button type="submit" class="btn btn-primary" style="max-width: 200px" onclick="geraTabuada()">Gerar tabuada</button>
+          <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Multiplicação</th>
+                    <th scope="col">Resultado</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr> -->
+                 
+                </tbody>
+              </table>
+          </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 4</title>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/ex4.css">
+    <script src="./js/ex4.js"></script>
+</head>
+<body>
+    <main>
+        <div class="ex4">
+            <h1>Selecione os itens do restaurante</h1>
+            <form onchange="pegaTotalItens()">
+              <div class="form-check">
+                  <input class="form-check-input checkboxItens" type="checkbox" value="" id="flexCheckDefault1">
+                  <label class="form-check-label" for="flexCheckDefault1">
+                    Item 1
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input checkboxItens" type="checkbox" value="" id="flexCheckDefault2">
+                  <label class="form-check-label" for="flexCheckDefault2">
+                    Item 2
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input checkboxItens" type="checkbox" value="" id="flexCheckDefault3">
+                  <label class="form-check-label" for="flexCheckDefault3">
+                    Item 3
+                  </label>
+              </div><div class="form-check">
+                  <input class="form-check-input checkboxItens" type="checkbox" value="" id="flexCheckDefault4">
+                  <label class="form-check-label" for="flexCheckDefault4">
+                    Item 4
+                  </label>
+              </div><div class="form-check">
+                  <input class="form-check-input checkboxItens" type="checkbox" value="" id="flexCheckDefault5">
+                  <label class="form-check-label" for="flexCheckDefault5">
+                    Item 5
+                  </label>
+              </div><div class="form-check">
+                  <input class="form-check-input checkboxItens" type="checkbox" value="" id="flexCheckDefault6">
+                  <label class="form-check-label" for="flexCheckDefault6">
+                    Item 6
+                  </label>
+              </div>
+            </form>
+            <h2>Total de itens selecionados:</h2>
+            <p id="totalItens"></p>
+        </div>
+    </main>
+</body>
+</html>
