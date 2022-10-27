@@ -9,91 +9,96 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
      <!-- JavaScript Bundle with Popper -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="./css/ex15.css">
+     <script src="./js/ex15.js"></script>
 </head>
 <body>
-    <div>
-        <form>
-            <div class="form-group">
+    <main class="container classMain">
+        <div>
+            <form>
+            <div class="form-group divForm">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" placeholder="seu_email@dominio.com">
             </div>
-            <div class="form-group">
+            <div class="form-group divForm">
                 <label for="senha">Senha</label>
                 <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
             </div>
         </form>
-        <button class="btn btn-outline-dark btn-sm" type="submit">Logar</button>
+        <button class="btn btn-outline-dark btn-sm btnEx15" id="loginBtn" type="submit" onclick="login()">Logar</button>
     </div>
-    <div>
-        <button class="btn btn-outline-dark btn-sm" type="">Gerenciar marcas</button>
-        <button class="btn btn-outline-dark btn-sm" type="">Gerenciar produtos</button>
-        <button class="btn btn-outline-dark btn-sm" type="">Encerrar</button>
+    <div >
+        <div class="" id="botoes"> 
+            <button class="btn btn-outline-dark btn-sm btnEx15" type="" onclick="removeClassMarca()">Gerenciar marcas</button>
+            <button class="btn btn-outline-dark btn-sm btnEx15" type="" onclick="removeClassProduto()">Gerenciar produtos</button>
+            <button class="btn btn-outline-dark btn-sm btnEx15" type="">Encerrar</button>
+        </div>
+        <div class="divMarca ocultadas" id="formMarca">
+            <form>
+                <div class="form-group">
+                    <label for="nome-marca">Marca</label>
+                    <input type="text" class="form-control" id="nome-marca" placeholder="Informe o nome da marca">
+                </div>
+        
+            </form>   
+            <button class="btn btn-outline-dark btn-sm btnEx15" type="submit">Cadastrar</button>
+        </div>
+        <div class="divProdutos ocultadas" id="formProduto">
+            <form>
+                <div class="form-group">
+                    <label for="nome-produto">Produto</label>
+                    <input type="text" class="form-control" id="nomeProduto" placeholder="Informe o nome do produto">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nome">Marca</label>
+                    <input type="text" class="form-control" id="marcaProduto" placeholder="Informe a marca do produto">
+                </div>
+                
+                <div class="form-group">
+                    <label for="valor">Valor</label>
+                    <input type="value" class="form-control" id="precoProduto" placeholder="000.00" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                </div>
+            </form>
+            <button class="btn btn-outline-dark btn-sm btnEx15" type="submit" onclick="pegaDadosProdutos()">Cadastrar</button>
+            <table class="table table-bordered tableBody">
+                <thead>
+                    <tr>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Qtd de produtos cadastrados: </td>
+                        <td id="prodCadastrados">1</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Marca</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hersheys</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Qtd de marcas cadastradas: </td>
+                        <td id="">1</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
-    <form>
-        <div class="form-group">
-            <label for="nome-marca">Marca</label>
-            <input type="text" class="form-control" id="nome-marca" placeholder="Informe o nome da marca">
-        </div>
-
-        <button class="btn btn-outline-dark btn-sm" type="submit">Cadastrar</button>
-    </form>   
-    <form>
-        <div class="form-group">
-            <label for="nome-produto">Produto</label>
-            <input type="text" class="form-control" id="nome-produto" placeholder="Informe o nome do produto">
-        </div>
-
-        <div class="form-group">
-            <label for="nome">Marca</label>
-            <input type="text" class="form-control" id="nome" placeholder="Informe a marca do produto">
-        </div>
-
-        <div class="form-group">
-            <label for="valor">Valor</label>
-            <input type="text" class="form-control" id="nome" placeholder="R$00,00">
-        </div>
-
-        <button class="btn btn-outline-dark btn-sm" type="submit">Cadastrar</button>
-        </form>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                <th scope="col">Produto</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Chocolate</td>
-                <td>Hersheys</td>
-                <td>R$5,00</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Qtd de produtos cadastrados: </td>
-                    <td>1</td>
-                </tr>
-            </tfoot>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                <th scope="col">Marca</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Hersheys</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Qtd de marcas cadastradas: </td>
-                    <td>1</td>
-                </tr>
-            </tfoot>
-        </table>
+    </main>
 </body>
 </html>
